@@ -9,7 +9,7 @@
       <!-- Function screen -->
       <div class="w-full px-3 py-6 text-2xl">{{funcV}}</div>
       <!-- Number screen -->
-      <div class="w-full px-3 text-6xl">{{numbV}}</div>
+      <div class="w-full px-3 text-6xl">{{numbV | number}}</div>
     </div>
     <!-- button area -->
     <div class="bg-red-400 flex w-full text-white">
@@ -80,7 +80,7 @@
       </div>
       <div class="w-1/4 h-16 text-center border-r border-b border-white">
         <!-- 3 button -->
-        <button class="outline-none w-full px-6 py-5" (click)="onClickbutton('c','number')">3</button>
+        <button class="outline-none w-full px-6 py-5" (click)="onClickbutton('3','number')">3</button>
       </div>
       <div class="w-1/4 h-16 text-center border-r border-b border-white">
         <!-- + button -->
@@ -99,7 +99,7 @@
         <button class="outline-none w-full px-6 py-5" (click)="onClickbutton('.','function')">.</button>
       </div>
       <div class="w-2/4 h-16 text-center border-r border-b border-white">
-        <!-- 9 button -->
+        <!-- Equal button -->
         <button class="outline-none w-full px-6 py-5" (click)="onClickbutton('=','function')">=</button>
       </div>
       <!-- end of second-row -->

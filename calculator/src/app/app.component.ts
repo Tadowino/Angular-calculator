@@ -10,9 +10,83 @@ export class AppComponent {
   //default values of calc screen
   funcV: any = 'NoFunction';
   numbV: number = 0;
+  //concatenation value
+  conV: string = 'noValue';
+  //calculation values
+  firstnumber: number = 0;
+  secondnumber: number = 0;
+  
 
   onClickbutton(val:string, type:any){
-    console.log(val, type);
+    //checks if value is a number
+    if(type == 'number'){
+      this.onNumberClick(val);
+    }
+    //checks if value is a function
+    else if(type == 'function'){
+      this.onFunctionClick(val);
+    }
   }
+  //concatenates calculator values on screen and converts values from string to number
+  onNumberClick(val:string){
+    if(this.conV != 'noValue'){
+    this.conV = this.conV + val;
+    }
+    else if(this.conV == 'noValue'){
+      this.conV = val;
+    }
+    this.numbV = parseFloat(this.conV);
+  }
+  //extract firstnumber and secondnumber
+  onFunctionClick(val:string){
+  if(this.funcV == 'NoFunction'){
+    this.firstnumber = this.numbV;
+    this.conV = 'noValue';
+    this.numbV = 0;
+    this.funcV = val;
+  }
+  else if(this.funcV != 'NoFunction'){
+    this.secondnumber = this.numbV;
+    this.calculateValue(val);
+  }
+  }
+  //calculations
+  calculateValue(val:string){
+    if(val == '+'){
+      const Total = this.firstnumber + this.secondnumber;
+      this.numbV = Total;
+      this.firstnumber = Total;
+      this.secondnumber = 0;
+      this.conV = 'noValue';
+      this.funcV = 'NoFunction'; 
+    }
+    else if(val == '-'){
+      const Total = this.firstnumber - this.secondnumber;
+      this.numbV = Total;
+      this.firstnumber = Total;
+      this.secondnumber = 0;
+      this.conV = 'noValue';
+      this.funcV = 'NoFunction'; 
+    }
+    else if(val == '*'){
+      const Total = this.firstnumber * this.secondnumber;
+      this.numbV = Total;
+      this.firstnumber = Total;
+      this.secondnumber = 0;
+      this.conV = 'noValue';
+      this.funcV = 'NoFunction'; 
+    }
+    else if(val == '/'){
+      const Total = this.firstnumber / this.secondnumber;
+      this.numbV = Total;
+      this.firstnumber = Total;
+      this.secondnumber = 0;
+      this.conV = 'noValue';
+      this.funcV = 'NoFunction'; 
+    }
+
+    
+  }
+  
   
 }
