@@ -39,7 +39,11 @@ export class AppComponent {
   }
   //extract firstnumber and secondnumber
   onFunctionClick(val:string){
-  if(this.funcV == 'NoFunction'){
+  if(val == 'c'){
+    this.onClear();
+  }
+  
+  else if(this.funcV == 'NoFunction'){
     this.firstnumber = this.numbV;
     this.conV = 'noValue';
     this.numbV = 0;
@@ -52,40 +56,75 @@ export class AppComponent {
   }
   //calculations
   calculateValue(val:string){
-    if(val == '+'){
+    if(this.funcV == '+'){
       const Total = this.firstnumber + this.secondnumber;
       this.numbV = Total;
       this.firstnumber = Total;
       this.secondnumber = 0;
       this.conV = 'noValue';
       this.funcV = 'NoFunction'; 
+      if(val == '='){
+        this.onEqual();
+      }
     }
-    else if(val == '-'){
+    else if(this.funcV == '-'){
       const Total = this.firstnumber - this.secondnumber;
       this.numbV = Total;
       this.firstnumber = Total;
       this.secondnumber = 0;
       this.conV = 'noValue';
       this.funcV = 'NoFunction'; 
+      if(val == '='){
+        this.onEqual();
+      }
     }
-    else if(val == '*'){
+    else if(this.funcV == '*'){
       const Total = this.firstnumber * this.secondnumber;
       this.numbV = Total;
       this.firstnumber = Total;
       this.secondnumber = 0;
       this.conV = 'noValue';
       this.funcV = 'NoFunction'; 
+      if(val == '='){
+        this.onEqual();
+      }
     }
-    else if(val == '/'){
+    else if(this.funcV == '/'){
       const Total = this.firstnumber / this.secondnumber;
       this.numbV = Total;
       this.firstnumber = Total;
       this.secondnumber = 0;
       this.conV = 'noValue';
       this.funcV = 'NoFunction'; 
+      if(val == '='){
+        this.onEqual();
+      }
+    }
+    else if(this.funcV == '%'){
+      const Total = this.firstnumber % this.secondnumber;
+      this.numbV = Total;
+      this.firstnumber = Total;
+      this.secondnumber = 0;
+      this.conV = 'noValue';
+      this.funcV = 'NoFunction'; 
+      if(val == '='){
+        this.onEqual();
+      }
     }
 
-    
+  }
+  onEqual(){
+    this.firstnumber = 0;
+    this.secondnumber = 0;
+    this.conV = 'noValue';
+    this.funcV = 'NoFunction'; 
+  }
+  onClear(){
+    this.numbV = 0;
+    this.firstnumber = 0;
+    this.secondnumber = 0;
+    this.conV = 'noValue';
+    this.funcV = 'NoFunction';
   }
   
   
