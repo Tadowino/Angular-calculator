@@ -7,24 +7,24 @@
     <!-- Calculator screen -->
     <div class="w-full bg-black h-40 text-right text-white">
       <!-- Function screen -->
-      <div class="w-full px-3 py-6 text-2xl">Function</div>
+      <div class="w-full px-3 py-6 text-2xl">{{funcV}}</div>
       <!-- Number screen -->
-      <div class="w-full px-3 text-6xl">0</div>
+      <div class="w-full px-3 text-6xl">{{numbV}}</div>
     </div>
     <!-- button area -->
     <div class="bg-red-400 flex w-full text-white">
       <!-- first-row -->
       <div class="w-2/4 h-16 text-center border-r border-b border-white">
         <!-- clear button -->
-        <button class="outline-none w-full px-6 py-5">C</button>
+        <button class="outline-none w-full px-6 py-5" (click)="onClickbutton('c','function')">C</button>
       </div>
       <div class="w-1/4 h-16 text-center border-r border-b border-white">
         <!-- percentage button -->
-        <button class="outline-none w-full px-6 py-5">%</button>
+        <button class="outline-none w-full px-6 py-5" (click)="onClickbutton('%','function')">%</button>
       </div>
       <div class="w-1/4 h-16 text-center border-r border-b border-white">
         <!-- Division button -->
-        <button class="outline-none w-full px-6 py-5">/</button>
+        <button class="outline-none w-full px-6 py-5" (click)="onClickbutton('/','function')">/</button>
       </div>
       <!-- end of first-row -->
     </div>
@@ -32,19 +32,19 @@
       <!-- second-row -->
       <div class="w-1/4 h-16 text-center border-r border-b border-white">
         <!-- 7 button -->
-        <button class="outline-none w-full px-6 py-5">7</button>
+        <button class="outline-none w-full px-6 py-5" (click)="onClickbutton('7','number')">7</button>
       </div>
       <div class="w-1/4 h-16 text-center border-r border-b border-white">
         <!-- 8 button -->
-        <button class="outline-none w-full px-6 py-5">8</button>
+        <button class="outline-none w-full px-6 py-5" (click)="onClickbutton('8','number')">8</button>
       </div>
       <div class="w-1/4 h-16 text-center border-r border-b border-white">
         <!-- 9 button -->
-        <button class="outline-none w-full px-6 py-5">9</button>
+        <button class="outline-none w-full px-6 py-5" (click)="onClickbutton('9','number')">9</button>
       </div>
       <div class="w-1/4 h-16 text-center border-r border-b border-white">
         <!-- x button -->
-        <button class="outline-none w-full px-6 py-5">X</button>
+        <button class="outline-none w-full px-6 py-5" (click)="onClickbutton('x','function')">X</button>
       </div>
       <!-- end of second-row -->
     </div>
@@ -52,19 +52,19 @@
       <!-- third-row -->
       <div class="w-1/4 h-16 text-center border-r border-b border-white">
         <!-- 4 button -->
-        <button class="outline-none w-full px-6 py-5">4</button>
+        <button class="outline-none w-full px-6 py-5" (click)="onClickbutton('4','number')">4</button>
       </div>
       <div class="w-1/4 h-16 text-center border-r border-b border-white">
         <!-- 5 button -->
-        <button class="outline-none w-full px-6 py-5">5</button>
+        <button class="outline-none w-full px-6 py-5" (click)="onClickbutton('5','number')">5</button>
       </div>
       <div class="w-1/4 h-16 text-center border-r border-b border-white">
         <!-- 6 button -->
-        <button class="outline-none w-full px-6 py-5">6</button>
+        <button class="outline-none w-full px-6 py-5" (click)="onClickbutton('6','number')">6</button>
       </div>
       <div class="w-1/4 h-16 text-center border-r border-b border-white">
         <!-- - button -->
-        <button class="outline-none w-full px-6 py-5">-</button>
+        <button class="outline-none w-full px-6 py-5" (click)="onClickbutton('-','function')">-</button>
       </div>
       <!-- end of third-row -->
     </div>
@@ -72,19 +72,19 @@
       <!-- fourth-row -->
       <div class="w-1/4 h-16 text-center border-r border-b border-white">
         <!-- 1 button -->
-        <button class="outline-none w-full px-6 py-5">1</button>
+        <button class="outline-none w-full px-6 py-5" (click)="onClickbutton('1','number')">1</button>
       </div>
       <div class="w-1/4 h-16 text-center border-r border-b border-white">
         <!-- 2 button -->
-        <button class="outline-none w-full px-6 py-5">2</button>
+        <button class="outline-none w-full px-6 py-5" (click)="onClickbutton('2','number')">2</button>
       </div>
       <div class="w-1/4 h-16 text-center border-r border-b border-white">
         <!-- 3 button -->
-        <button class="outline-none w-full px-6 py-5">3</button>
+        <button class="outline-none w-full px-6 py-5" (click)="onClickbutton('c','number')">3</button>
       </div>
       <div class="w-1/4 h-16 text-center border-r border-b border-white">
         <!-- + button -->
-        <button class="outline-none w-full px-6 py-5">+</button>
+        <button class="outline-none w-full px-6 py-5" (click)="onClickbutton('+','function')">+</button>
       </div>
       <!-- end of fourth-row -->
     </div>
@@ -92,41 +92,18 @@
       <!-- fifth-row -->
       <div class="w-1/4 h-16 text-center border-r border-b border-white">
         <!-- 0 button -->
-        <button class="outline-none w-full px-6 py-5">0</button>
+        <button class="outline-none w-full px-6 py-5" (click)="onClickbutton('0','number')">0</button>
       </div>
       <div class="w-1/4 h-16 text-center border-r border-b border-white">
         <!-- decimal button -->
-        <button class="outline-none w-full px-6 py-5">.</button>
+        <button class="outline-none w-full px-6 py-5" (click)="onClickbutton('.','function')">.</button>
       </div>
       <div class="w-2/4 h-16 text-center border-r border-b border-white">
         <!-- 9 button -->
-        <button class="outline-none w-full px-6 py-5">=</button>
+        <button class="outline-none w-full px-6 py-5" (click)="onClickbutton('=','function')">=</button>
       </div>
       <!-- end of second-row -->
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     
   </div>
 
